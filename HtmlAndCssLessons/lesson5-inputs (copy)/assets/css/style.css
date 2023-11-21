@@ -1,0 +1,17 @@
+html{
+    font-size: 20px;
+}
+div{
+    width: 100vw;
+    height: 90vh;
+    background-color: red;
+}
+
+ul{
+    font-size: 10px;
+}
+
+
+li{
+    font-size: 10em;
+}
