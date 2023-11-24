@@ -1,0 +1,97 @@
+/* @import url('color.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+@import url('reset.css'); */
+
+/* body,*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+
+/* .box{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-left: 12px dotted #000;
+  border-radius: 50%;
+
+} */
+
+
+/* *{
+    margin: 0;
+}
+i{
+  color: blue;
+  font-size: 300px;
+} */
+
+/* div{
+    width: 200px;
+    height: 200px; */
+    /* background-color: #00f123; */
+    /* 0123456789abcdef */
+    /* background-color: rgb(red, green, blue); min 0 max 255 */
+    /* background-color: rgb(0, 0, 255);  */
+    /* background-color: rgba(0, 0, 255,0.5);  */
+    /* background-color: hwb(10 40% 20%); */
+
+    /* background: linear-gradient(250deg, rgba(139,175,0,1) 7%, rgba(0,175,164,1) 60%, rgba(16,0,255,1) 100%); */
+/* } */
+/* h1{
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+} */
+/* span{
+    display: block;
+    height: 100px;
+    width: 100px;
+    background-color: green;
+}
+.box{
+    display: inline-block; 
+    margin-left: -10px   ;
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    margin-top: 10px;
+} */
+
+
+/* .con-box {
+    display: inline-block;
+  }
+  .box1,
+  .box2 {
+    width: 100px;
+    height: 100px;
+  }
+  .box1 {
+    background-color: green;
+  
+  
+  }
+  .box2 {
+    background-color: blue;
+  }
+  .box3 {
+  
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    display: inline-block;
+  } */
+
+  /* img{
+    float: left;
+  }
+
+  h1{
+    clear: both;
+  }
+  div{
+    margin: 20px;
+  } */
+ 
