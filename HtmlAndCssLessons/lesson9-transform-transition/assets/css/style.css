@@ -1,0 +1,30 @@
+@import url('reset.css');
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.box{
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  /* transform: translateX(200px);
+  transform: translateY(200px); */
+  /* transform: rotate(100deg); */
+  /* transform: skew(30deg); */
+  /* matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY()) */
+  /* transform: matrix(1, -0.3, 0, 1, 200, 0); */
+
+  /* transition-property: background-color, transform; */
+  /* transition-duration:2s ; */
+  /* transition-delay: 2s; */
+  /* transition:  background-color 2s, transform 10s; */
+  transition: .5s;
+
+}
+
+.box:hover{
+  background-color: red;
+  width: 300px;
+}

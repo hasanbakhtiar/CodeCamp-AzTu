@@ -1,0 +1,25 @@
+@import url('reset.css');
+
+main{
+  width: 100%;
+  height: 50vh;
+  background-color: bisque  ;
+  /* overflow-y:scroll ; */
+  display: flex;
+  flex-flow: row wrap;
+  /* align-content: stretch; */
+  gap: 20px;
+}
+
+main .box{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  font-size: 40px;
+  color: #ffff;
+
+}
+main .box:nth-child(5){
+  align-self: center;
+
+}
