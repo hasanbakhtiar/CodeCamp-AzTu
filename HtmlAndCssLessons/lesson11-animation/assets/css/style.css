@@ -1,0 +1,56 @@
+@import url('reset.css');
+
+
+.box{
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  /* animation-name: animate; */
+  /* animation-duration: 2s; */
+  /* animation-iteration-count: infinite; */
+  /* animation-delay: 2s; */
+  animation: animate 5s infinite
+}
+
+/* @keyframes animate {
+      from{
+        left: 0;
+      }
+      to{
+        left: 300px;
+      }
+} */
+
+@keyframes animate {
+    0%{
+      left: 0px;
+      top: 0px;
+    }
+    25%{
+      left: 300px;
+      top: 0;
+      background-color: green;
+      margin-top: 40px;
+    }
+    50%{
+      left: 300px;
+      top: 300px;
+      background-color: blue;
+      border-radius: 50%;
+      transform: scale(2);
+
+    }
+    75%{
+      left: 0px;
+      top: 300px;
+      background-color: orange;
+
+    }
+    100%{
+      left: 0;
+      top: 0;
+      background-color: red;
+
+    }
+}
