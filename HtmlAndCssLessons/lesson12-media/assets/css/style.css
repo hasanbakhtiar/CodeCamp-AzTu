@@ -1,0 +1,60 @@
+@import url('reset.css');
+
+
+
+
+.wrapper{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.con{
+  width: 80%;
+}
+
+
+.discover .card-con{
+  padding: 50px 0;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: bisque;
+  justify-content: space-evenly;
+  row-gap: 20px;
+}
+
+.discover .card{
+  width: 23%;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+
+}
+.discover .card .card-img{
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+.discover .card:hover p{
+  color: red;
+}
+.discover .card:hover img {
+  transform: scale(1.5);
+}
+.discover .card img{
+  transition: .5s;
+  width: 100%;
+}
+
+@media  (max-width:700px){
+  .discover .card{
+    width: 48%;
+    background-color: red;
+  
+  }
+  .a{
+    display: none;
+  }
+}
+
