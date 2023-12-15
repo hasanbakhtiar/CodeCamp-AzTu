@@ -1,0 +1,105 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
+body,*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.service{
+    padding: 50px 0px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service .con{
+    width: 80%;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.service .con .card{
+    position: relative;
+    width: 30%;
+    box-shadow: 10px 17px 37px -3px rgba(0,0,0,0.34);
+
+}
+
+.service .con .card .top-img{
+    height: 270px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url('	https://figtheme.com/html/arckytec/assets/images/services/services-1-1.jpg');
+
+
+}
+
+.service .con .card .top-img .bg{
+    width: 100%;
+    height: 0px;
+    background-color:rgba(0,0, 0,.4) ;
+    transition: .5s;
+}
+.service .con .card:hover .top-img .bg{
+    height: 270px;
+}
+.service .con .card .text-con{
+    padding: 20px;
+}
+.service .con .card .text-con *:not(.btn-con,button){
+        font-family: sans-serif;
+        font-weight: 300;
+        padding: 20px 0px;
+}
+.service .con .card .text-con h3{
+    border-bottom: 2px solid grey;
+}
+
+.service .con .card .text-con .btn-con{
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+}
+
+.service .con .card .icon-con{
+    position: absolute;
+    right: 10px;
+    bottom: 35%;
+    display: inline-block;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 21px;
+    box-shadow: 10px 17px 37px -3px rgba(0,0,0,0.34);
+
+}
+.service .con .card .icon-con i{
+        font-size: 35px;
+        color: #B98E75;
+}
+
+
+.service .con .card .btn-con button{
+    padding:10px 20px;
+    color: #B98E75;
+    background: none;
+    border:2px solid #B98E75;
+}
+
+
+@media (max-width:700px){
+    .service .con {
+        flex-wrap: wrap;
+        row-gap: 20px;
+    }
+    .service .con .card{
+        width: 100%;
+        
+    }
+}
+
