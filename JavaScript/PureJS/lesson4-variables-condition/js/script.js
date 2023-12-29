@@ -98,6 +98,31 @@
 
 
 
+// const info = 7;
+// switch (info) {
+//     case 5:
+//     case 6:
+//     case 7:
+//     case 8:
+//     case 9:
+//     case 10:
+//     case 11:
+//         if (info == 7) {
+//             console.log('success');
+//         }else{
+//             console.log('wrong');
+//         }
+//         break;
+        
+//     case "hello":
+//         console.log('this is hello');
+//         break;
+// }
+
+
+
+
+
 
 
 
