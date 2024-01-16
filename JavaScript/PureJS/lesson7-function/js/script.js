@@ -359,6 +359,9 @@
 
 
 
+const a = "Hello";
+console.log(eval("a"));
+
 
 
 
