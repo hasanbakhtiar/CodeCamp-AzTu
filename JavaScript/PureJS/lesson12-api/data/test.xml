@@ -1,0 +1,11 @@
+<Generalcar>
+    <Car id="1">
+        <title>BMW X5</title>
+        <color>black</color>
+    </Car>
+    
+    <Car id="2">
+        <title>BMW X5</title>
+        <color>black</color>
+    </Car>
+</Generalcar>
