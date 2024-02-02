@@ -1,6 +1,7 @@
+// Login Start
 const databaseUser = {
-    email: "admin@bestshop.com",
-    password: "bestshop2024"
+    email: localStorage.getItem('email'),
+    password: localStorage.getItem('password')
 }
 
 
@@ -17,6 +18,9 @@ const authLogin = (e) => {
         if (loginInput[0].value === databaseUser.email && loginInput[1].value === databaseUser.password) {
             myalert.innerHTML = 'Login successfull!';
             myalert.className = "alert alert-success";
+            window.location.assign('home.html');
+            localStorage.setItem('login',"true");
+
         } else {
             myalert.innerHTML = 'Email or password is wrong!';
             myalert.className = "alert alert-danger ";
@@ -25,3 +29,4 @@ const authLogin = (e) => {
 }
 
 loginForm.onsubmit = authLogin;
+// Login End
