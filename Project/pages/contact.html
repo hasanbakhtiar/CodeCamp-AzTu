@@ -1,60 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best Phone Shop - Contact</title>
-    <link rel="stylesheet" href="../assets/bootstrap5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Phone Shop - Contact</title>
+  <link rel="stylesheet" href="../assets/bootstrap5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body>
-    
-    <header></header>
+
+  <header></header>
 
 
-    <main class="container">
-        <h1 class="text-center my-5">Contact Us</h1>
-        <form>
-            <div class="mb-3">
-              <label  class="form-label">Name</label>
-              <input type="text" class="form-control" >
-            </div>
+  <main class="container">
+    <h1 class="text-center my-5">Contact Us</h1>
+    <form id="contact-form">
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" name="name" class="form-control">
+      </div>
 
-            <div class="mb-3">
-                <label  class="form-label">Surname</label>
-                <input type="text" class="form-control" >
-              </div>
-
-
-              <div class="mb-3">
-                <label  class="form-label">Phone</label>
-                <input type="tel" class="form-control" >
-              </div>
+      <div class="mb-3">
+        <label class="form-label">Surname</label>
+        <input type="text" name="surname" class="form-control">
+      </div>
 
 
-              <div class="mb-3">
-                <label  class="form-label">Email</label>
-                <input type="email" class="form-control" >
-              </div>
-
-              <div class="mb-3">
-                <label  class="form-label">Message</label>
-                <div class="form-floating">
-                    <textarea class="form-control"   style="height: 100px"></textarea>
-                    <label for="floatingTextarea2"></label>
-                  </div>
-              </div>
-          
-            <button type="submit" class="btn btn-success">Send</button>
-          </form>
-    </main>
+      <div class="mb-3">
+        <label class="form-label">Phone</label>
+        <input type="tel" name="phone" class="form-control">
+      </div>
 
 
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" name="email" class="form-control">
+      </div>
 
-      <footer class="py-3 my-4"></footer>
-    
+      <div class="mb-3">
+        <label class="form-label">Message</label>
+        <div class="form-floating">
+          <textarea name="message" class="form-control" style="height: 100px"></textarea>
+          <label for="floatingTextarea2"></label>
+        </div>
+      </div>
 
-    <script src="../assets/bootstrap5/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/script.js"></script>
+      <button type="submit" class="btn btn-success">Send</button>
+    </form>
+  </main>
+
+
+
+  <footer class="py-3 my-4"></footer>
+
+
+  <script src="../assets/bootstrap5/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/script.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script src="../assets/js/contact.js"></script>
 </body>
+
 </html>
