@@ -1,45 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best Phone Shop</title>
-    <link rel="stylesheet" href="../assets/bootstrap5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Phone Shop</title>
+  <link rel="stylesheet" href="../assets/bootstrap5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+    }
+  </style>
 </head>
+
 <body>
-    
-    <header></header>
 
-      <section class="hero container">
-        <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img height="700" src="../assets/img/samsung-galaxy-s23-plus-colors.jpg" class="d-block w-100 ob" alt="err">
-              </div>
-              <div class="carousel-item">
-                <img height="700" src="../assets/img/xiaomi-phones-mi-redmi-poco.jpg" class="d-block w-100 ob" alt="err">
-              </div>
-              <div class="carousel-item">
-                <img height="700" src="../assets/img/OnePlus-9-colors.jpg" class="d-block w-100 ob" alt="err">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-      </section>
+  <header></header>
+  
+
+  <section class="hero container">
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img height="700" src="../assets/img/samsung-galaxy-s23-plus-colors.jpg" class="d-block w-100 ob" alt="err">
+        </div>
+        <div class="carousel-item">
+          <img height="700" src="../assets/img/xiaomi-phones-mi-redmi-poco.jpg" class="d-block w-100 ob" alt="err">
+        </div>
+        <div class="carousel-item">
+          <img height="700" src="../assets/img/OnePlus-9-colors.jpg" class="d-block w-100 ob" alt="err">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
 
 
-      <footer class="py-3 my-4"></footer>
-    
 
-    <script src="../assets/bootstrap5/js/bootstrap.bundle.min.js"></script>
-    <script src="../../assets/js/script.js"></script>
+  <section class="last-products">
+    <div class="container my-5">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center w-100">
+      <a href="products.html" class="btn btn-warning my-3">View More</a>
+    </div>
+  </section>
+
+
+  <footer class="py-3 my-4"></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="../assets/bootstrap5/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/js/script.js"></script>
+  <script type="module">
+
+
+
+    import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 4,
+      spaceBetween: 10,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+
+
+
+    const swiperCon = document.querySelector('.swiper-wrapper');
+
+    fetch("https://fakestoreapi.com/products")
+      .then(res => res.json())
+      .then(data => {
+
+        let swiperval = "";
+        data.slice(0,6).map(i => {
+          swiperval += `
+    <div class="swiper-slide"><img src="${i.image}" style="object-fit:contain" height="250" /></div>
+
+    `
+
+
+        })
+        swiperCon.innerHTML = swiperval;
+
+      })
+
+  </script>
 </body>
+
 </html>
