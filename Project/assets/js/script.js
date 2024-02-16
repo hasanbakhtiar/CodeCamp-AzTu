@@ -46,31 +46,45 @@ header.innerHTML = `
         ${localStorage.getItem('login') === "true" ? ` <a class="btn  me-3" href="#">${localStorage.getItem("fullname")}</a>
         <a class="btn btn-danger" id="logout">Log out</a>` : ` <a class="btn btn-outline-dark me-3" href="login.html">Login</a>
         <a class="btn btn-warning me-3"  href="register.html">Register</a>`}
-       
-        <button class="btn btn-outline-danger ms-5"><i class="fa-solid fa-heart-pulse"></i></button>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary position-relative me-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <i class="fa-solid fa-cart-shopping"></i>
+  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    0
+    <span class="visually-hidden">unread messages</span>
+  </span>
+</button>
+    
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
         </div>
+        <button class="btn btn-outline-danger "><i class="fa-solid fa-heart-pulse"></i></button>
+        </div>
+
+        
     </div>
 </div>
 </nav>
 
-<button class="btn btn-outline-success position-absolute  " style="top:9px; right:369px"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
 
-<i class="fa-solid fa-cart-shopping"></i>
-<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-  0
-  <span class="visually-hidden">unread messages</span>
-</span>
-</button>
 
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    ...
-  </div>
-</div>
+
 `;
 
 if (document.querySelector('#logout')) {
@@ -101,7 +115,23 @@ footer.innerHTML = `
 
 // =================================================================
 
+setTimeout(()=>{
+        document.querySelector('.pre-loader').style.display = "none";
+        document.querySelector('.main-page').style.display = "block";
+},1500);
 
+
+// var place = document.querySelector(".followMouse");
+// place.style.position = "absolute";
+// place.style.color = "red";
+// place.style.top="10px";
+// place.style.fontSize = "15px";
+// place.style.zIndex = "999";
+// window.onmousemove = function(event) {
+//             place.style.left = event.clientX + 'px';
+//             place.style.top = event.clientY + 'px';
+// }
 
 // AOS start
 AOS.init();
+

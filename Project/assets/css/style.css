@@ -6,3 +6,14 @@
     display: block;
     margin-top: 0; /* remove the gap so it doesn't close */
 }
+
+.pre-loader{
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/1400/2d869a145688797.62a27368d3d31.gif');
+    background-size: contain;
+    background-position: center;
+}
+.main-page{
+    display: none;
+}
