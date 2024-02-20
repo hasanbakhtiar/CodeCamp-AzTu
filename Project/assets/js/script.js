@@ -115,10 +115,7 @@ footer.innerHTML = `
 
 // =================================================================
 
-setTimeout(()=>{
-        document.querySelector('.pre-loader').style.display = "none";
-        document.querySelector('.main-page').style.display = "block";
-},1500);
+
 
 
 // var place = document.querySelector(".followMouse");

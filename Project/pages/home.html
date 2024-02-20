@@ -134,7 +134,10 @@
         swiperCon.innerHTML = swiperval;
 
       })
-
+      setTimeout(()=>{
+        document.querySelector('.pre-loader').style.display = "none";
+        document.querySelector('.main-page').style.display = "block";
+},1500);
   </script>
   <script src="../../assets/js/script.js"></script>
 
