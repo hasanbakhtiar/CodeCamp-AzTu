@@ -1,5 +1,13 @@
 
 const row = document.querySelector('.prod-row');
+const basket = [];
+
+const addToCart = (addProd) => {
+    basket.push(addProd);
+    const localBasket = JSON.stringify(basket);
+    localStorage.setItem('basket', localBasket);
+}
+
 
 fetch("https://fakestoreapi.com/products")
   .then(res => res.json())
@@ -15,8 +23,8 @@ fetch("https://fakestoreapi.com/products")
             <div class="card-body">
               <h5 class="card-title">${i.title.slice(0, 12)}...</h5>
               <p class="card-text">${i.price}$</p>
-              <button type="button" id="basket-btn" class="btn btn-success">Add to card</button>
-              <a href="productdetails.html?id=${i.id}" id="basket-btn" class="btn btn-secondary">View details</a>
+              <button id="btn-p" type="button" id="btn-p" class="btn btn-success">Add to card</button>
+              <a href="productdetails.html?id=${i.id}"  class="btn btn-secondary">View details</a>
             </div>
           </div>
         </div>
@@ -43,8 +51,8 @@ fetch("https://fakestoreapi.com/products")
           <div class="card-body">
               <h5 class="card-title">${i.title.slice(0, 12)}...</h5>
               <p class="card-text">${i.price}$</p>
-              <button type="button" id="basket-btn" class="btn btn-success">Add to card</button>
-              <a href="productdetails.html?id=${i.id}" id="basket-btn" class="btn btn-secondary">View details</a>
+              <button type="button" id="btn-p" class="btn btn-success">Add to card</button>
+              <a href="productdetails.html?id=${i.id}"  class="btn btn-secondary">View details</a>
   
               </div>
               </div>
@@ -72,12 +80,23 @@ fetch("https://fakestoreapi.com/products")
       document.querySelector("#pagi").className = "d-flex";
 
     }
+    
     row.innerHTML = col;
 
-
+    data.map((i, c) => {
+      document.querySelectorAll("#btn-p")[c].onclick = () => {
+  
+          addToCart(i);
+          setTimeout(()=>{
+            window.location.reload();
+          },2000)
+      };
+  })  
 
   });
 
+
+  
 
 
 

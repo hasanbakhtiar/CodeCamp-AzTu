@@ -65,7 +65,10 @@ header.innerHTML = `
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                ...
+              <ul class="list-group">
+              
+
+            </ul>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -86,6 +89,21 @@ header.innerHTML = `
 
 
 `;
+
+if (localStorage.getItem("basket")===null) {
+    localStorage.setItem('basket',JSON.stringify([]))
+}else{
+  const modalBody = document.querySelector('.list-group');
+const basketData = JSON.parse(localStorage.getItem('basket'));
+let  basketAdd = "";
+basketData.map(item=>{
+    basketAdd+=`<li class="list-group-item"><img width="70" src="${item.image}"/>${item.title}</li>`
+})
+
+modalBody.innerHTML = basketAdd;
+}
+
+
 
 if (document.querySelector('#logout')) {
     document.querySelector('#logout').onclick = () => {
