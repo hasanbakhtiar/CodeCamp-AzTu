@@ -46,7 +46,7 @@ header.innerHTML = `
         ${localStorage.getItem('login') === "true" ? ` <a class="btn  me-3" href="#">${localStorage.getItem("fullname")}</a>
         <a class="btn btn-danger" id="logout">Log out</a>` : ` <a class="btn btn-outline-dark me-3" href="login.html">Login</a>
         <a class="btn btn-warning me-3"  href="register.html">Register</a>`}
-        <!-- Button trigger modal -->
+        <a href="basket.html">
         <button type="button" class="btn btn-primary position-relative me-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
         <i class="fa-solid fa-cart-shopping"></i>
   <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -54,6 +54,7 @@ header.innerHTML = `
     <span class="visually-hidden">unread messages</span>
   </span>
 </button>
+        </a>
     
         
         <!-- Modal -->

@@ -87,9 +87,7 @@ fetch("https://fakestoreapi.com/products")
       document.querySelectorAll("#btn-p")[c].onclick = () => {
   
           addToCart(i);
-          setTimeout(()=>{
-            window.location.reload();
-          },2000)
+      
       };
   })  
 

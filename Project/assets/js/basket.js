@@ -1,3 +1,25 @@
+const tbody = document.querySelector("tbody");
+
+const comingBasketData = JSON.parse(localStorage.getItem("basket"));
+
+let tr = "";
+
+comingBasketData.map((i,c)=>{
+    tr+=`  <tr>
+    <th scope="row">${c+1}</th>
+    <td><img width="70" src="${i.image}"/></td>
+    <td>${i.title}</td>
+    <td>${i.price}$</td>
+  </tr>`
+  tbody.innerHTML = tr;
+})
+
+
+
+
+
+
+
 // const productData = [
 //     {
 //         id: 2,
@@ -60,6 +82,9 @@
 //     ulBasket.innerHTML = liB;
 // }
 // showBasket();
+
+
+
 
 
 
