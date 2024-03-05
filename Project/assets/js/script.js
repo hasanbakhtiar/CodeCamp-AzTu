@@ -3,7 +3,7 @@ const header = document.querySelector('header');
 
 header.innerHTML = `
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary w-100" style="z-index:9;transition:.5s">
 <div class="container">
 
     <a class="navbar-brand" href="home.html">Best Shop</a>
@@ -49,7 +49,7 @@ header.innerHTML = `
         <a href="basket.html">
         <button type="button" class="btn btn-primary position-relative me-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
         <i class="fa-solid fa-cart-shopping"></i>
-  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+  <span id="basket-counter" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
     0
     <span class="visually-hidden">unread messages</span>
   </span>
@@ -90,6 +90,8 @@ header.innerHTML = `
 
 
 `;
+document.querySelector('#basket-counter').innerHTML = JSON.parse(localStorage.getItem('basket')).length;
+
 
 if (localStorage.getItem("basket")===null) {
     localStorage.setItem('basket',JSON.stringify([]))
@@ -150,4 +152,21 @@ footer.innerHTML = `
 
 // AOS start
 AOS.init();
+
+
+
+window.onscroll = function() {fixedHeader()};
+
+function fixedHeader() {
+  if (document.documentElement.scrollTop > 150) {
+    document.querySelector("nav").style.position = "fixed";
+    document.querySelector("nav").style.opacity = "1";
+
+  }else if(document.documentElement.scrollTop == 0){
+    document.querySelector("nav").style.opacity = "1";
+
+  } else {
+    document.querySelector("nav").style.opacity = "0";
+  }
+}
 
