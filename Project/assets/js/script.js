@@ -90,7 +90,6 @@ header.innerHTML = `
 
 
 `;
-document.querySelector('#basket-counter').innerHTML = JSON.parse(localStorage.getItem('basket')).length;
 
 
 if (localStorage.getItem("basket")===null) {
@@ -139,34 +138,13 @@ footer.innerHTML = `
 
 
 
-// var place = document.querySelector(".followMouse");
-// place.style.position = "absolute";
-// place.style.color = "red";
-// place.style.top="10px";
-// place.style.fontSize = "15px";
-// place.style.zIndex = "999";
-// window.onmousemove = function(event) {
-//             place.style.left = event.clientX + 'px';
-//             place.style.top = event.clientY + 'px';
-// }
 
 // AOS start
 AOS.init();
 
 
 
-window.onscroll = function() {fixedHeader()};
 
-function fixedHeader() {
-  if (document.documentElement.scrollTop > 150) {
-    document.querySelector("nav").style.position = "fixed";
-    document.querySelector("nav").style.opacity = "1";
 
-  }else if(document.documentElement.scrollTop == 0){
-    document.querySelector("nav").style.opacity = "1";
 
-  } else {
-    document.querySelector("nav").style.opacity = "0";
-  }
-}
 

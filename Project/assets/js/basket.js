@@ -17,6 +17,7 @@ comingBasketData.map((i,c)=>{
 
 
 
+document.querySelector('#basket-counter').innerHTML =localStorage.getItem('basketcount');
 
 
 
