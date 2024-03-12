@@ -1,89 +1,75 @@
-
-const row = document.querySelector('.prod-row');
-const basket = [];
-
-const addToCart = (addProd) => {
-    basket.push(addProd);
-    const localBasket = JSON.stringify(basket);
-    localStorage.setItem('basket', localBasket);
-  }
-
-  let basketcount = 0;
+let listProductHTML = document.querySelector('.listProduct');
+let listCartHTML = document.querySelector('.listCart');
+let iconCart = document.querySelector('.icon-cart');
+let iconCartSpan = document.querySelector('.icon-cart span');
+let body = document.querySelector('body');
+let closeCart = document.querySelector('.close');
+let products = [];
+let cart = [];
 
 
-fetch("https://fakestoreapi.com/products")
-  .then(res => res.json())
-  .then(data => {
-    let col = "";
-    if (location.href.slice(43, 99)) {
-      let filterdata = data.filter(fd => fd.category === decodeURI(location.href.slice(43, 99)));
-      filterdata.map(i => {
-        col += `
-          <div data-aos="flip-up" class="col-12 col-sm-12 col-md-3" >
-          <div class="card" >
-            <img style="object-fit:contain" height="250" src="${i.image}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">${i.title.slice(0, 12)}...</h5>
-              <p class="card-text">${i.price}$</p>
-              <button id="btn-p" type="button" id="btn-p" class="btn btn-success">Add to card</button>
-              
-              <a href="productdetails.html?id=${i.id}"  class="btn btn-secondary">View details</a>
-            </div>
-          </div>
-        </div>
-          `
-      })
 
-    } else {
-          data.map(i => {
-            col += `
-          <div data-aos="flip-up" class="col-12 col-sm-12 col-md-3 mycard" >
-          <div class="card" >
-          <img style="object-fit:contain" height="250" src="${i.image}" class="card-img-top" alt="...">
-          <div class="card-body">
-              <h5 class="card-title">${i.title.slice(0, 12)}...</h5>
-              <p class="card-text">${i.price}$</p>
-              <button type="button" id="btn-p" class="btn btn-success">Add to card</button>
-              <a href="productdetails.html?id=${i.id}"  class="btn btn-secondary">View details</a>
-  
-              </div>
-              </div>
-              </div>
-              `  })
+    const addDataToHTML = () => {
+    // remove datas default from HTML
+
+        // add new data
+        if(products.length > 0) // if has data
+        {
+            products.forEach(product => {
+                let newProduct = document.createElement('div');
+                newProduct.dataset.id = product.id;
+                newProduct.classList.add('card');
+                newProduct.innerHTML = 
+                `<img src="${product.image}" class="card-img-top"  alt="">
+                <h2>${product.title }</h2>
+                <div class="price">$${product.price}</div>
+                <button class="addCart btn btn-success" >Add To Cart</button>`;
+                listProductHTML.appendChild(newProduct);
+            });
+        }
     }
-    
-    row.innerHTML = col;
-
-    data.map((i, c) => {
-      document.querySelectorAll("#btn-p")[c].onclick = () => {
-        addToCart(i);
-        swal({
-          title: "Product added to basket!",
-          text: "Good job!",
-          icon: "success",
-          button: "Ok",
+    listProductHTML.addEventListener('click', (event) => {
+        let positionClick = event.target;
+        if(positionClick.classList.contains('addCart')){
+            let id_product = positionClick.parentElement.dataset.id;
+            addToCart(id_product);
+        }
+    })
+const addToCart = (product_id) => {
+    let positionThisProductInCart = cart.findIndex((value) => value.product_id == product_id);
+    if(cart.length <= 0){
+        cart = [{
+            product_id: product_id,
+            quantity: 1
+        }];
+    }else if(positionThisProductInCart < 0){
+        cart.push({
+            product_id: product_id,
+            quantity: 1
         });
-        
-        basketcount+=1;
-        document.querySelector('#basket-counter').innerHTML =basketcount;
-        localStorage.setItem('basketcount',basketcount);
-      };
-      })  
-      
-    });
-document.querySelector('#basket-counter').innerHTML =localStorage.getItem('basketcount');
-
-    
+    }else{
+        cart[positionThisProductInCart].quantity = cart[positionThisProductInCart].quantity + 1;
+    }
+    addCartToMemory();
+}
+const addCartToMemory = () => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
 
 
 
-  
+const initApp = () => {
+    // get data product
+    fetch('https://fakestoreapi.com/products')
+    .then(response => response.json())
+    .then(data => {
+        products = data;
+        addDataToHTML();
 
-
-  
-
-
-
-
-
-
+        // get data cart from memory
+        if(localStorage.getItem('cart')){
+            cart = JSON.parse(localStorage.getItem('cart'));
+        }
+    })
+}
+initApp();

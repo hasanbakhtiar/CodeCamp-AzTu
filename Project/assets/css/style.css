@@ -17,3 +17,40 @@
 .main-page{
     display: none;
 }
+
+body{
+    margin: 0;
+    font-family: Poppins;
+}
+
+svg{
+    width: 30px;
+}
+
+.card{
+    width: 20% !important;
+    img{
+        height: 200px;
+        object-fit: contain;
+    }
+}
+.listProduct{
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.item *:not(.minus,.plus){
+    width: 10%;
+    margin-left: 30px;
+
+}
+
+.top{
+    width: 100%;
+    display: flex;
+}
+
+.top-item{
+    width: 15%;
+}

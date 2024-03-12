@@ -140,7 +140,7 @@ footer.innerHTML = `
 
 
 // AOS start
-AOS.init();
+// AOS.init();
 
 
 
